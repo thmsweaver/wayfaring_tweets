@@ -1,0 +1,14 @@
+<div class="form">
+  <%= form_for :session, url: sessions_path do |f| %>
+
+    <%= f.text_field :email, placeholder: "email", class: "signin_field" %>
+    <%= f.password_field :password, placeholder: "password", class: "signin_field" %>
+
+    <%= f.submit 'sign in', id: 'signin', class: "signin_button" %>
+
+  <% end %>
+
+  <h1>road tweets</h1>
+  <p>cataloguing adventure</p>
+
+</div>
