@@ -1,0 +1,21 @@
+
+<div class="user_form_container">
+  <% if @user.errors.any? %>
+    <b>Errors:</b>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="user_form">
+    <%= form_for @user do |f| %>
+      <%= f.text_field :name, placeholder: "name", class: "userform_field" %>
+      <%= f.text_field :email, placeholder: "email", class: "userform_field" %>
+      <%= f.password_field :password, placeholder: "password", class: "userform_field" %>
+      <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "userform_field" %>
+      <%= f.submit "submit", id: 'submit', class: "submit_button" %>
+    <% end %>
+  </div>
+</div>
