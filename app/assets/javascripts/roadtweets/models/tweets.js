@@ -5,33 +5,33 @@ define(function(require) {
 
   var Tweet = Backbone.Model.extend({
     defaults: {
-      screen_name: '',
-      created_at: '',
+      user: {screen_name: '', created_at: ''},
       text: '',
-      media_url: '',
-      coordinates: {type: '', coordinates: []}
+      media: [],
+      geo: {type: '', coordinates: []}
     },
 
     getLat: function() {
-      var coords = this.get('coordinates');
+      var coords = this.get('geo');
       return coords.coordinates[0];
     },
 
     getLng: function() {
-      var coords = this.get('coordinates');
+      var coords = this.get('geo');
       return coords.coordinates[1];
     }
   });
 
-  var Tweets = Backbone.Collection.extend({
+  var TweetsCollection = Backbone.Collection.extend({
 
-    model: Tweet,
     url: '/tweets',
+    model: Tweet,
 
     parse: function(data) {
       return data.statuses;
     }
   });
 
-  console.log('turtle.js connected')
+  console.log('tweets.js connected')
+  return new TweetsCollection();
 });

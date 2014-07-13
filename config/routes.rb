@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
+  get '/tweets' => 'tweets#index'
   delete '/signout' => 'sessions#destroy'
 
 end

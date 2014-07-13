@@ -1,4 +1,4 @@
-class TweetController < ApplicationController
+class TweetsController < ApplicationController
 
   def index
     @client = Twitter::REST::Client.new do |config|
@@ -9,7 +9,7 @@ class TweetController < ApplicationController
     end
 
   #TODO: the below hashtag is currently hardcoded and needs to be dynamic
-    render json: @client.search('#tweettrip', :result_type => "recent").attrs
+    render json: @client.search('#pizzapigpenandpals', :result_type => "recent").attrs
   end
 
 end

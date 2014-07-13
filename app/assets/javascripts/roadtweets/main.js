@@ -6,6 +6,12 @@ define(function(require) {
   var map = require('./views/map');
   var tweets = require('./models/tweets');
 
+  tweets.fetch().then(function() {
+    tweets.each(function(tweet) {
+      console.log( tweet.getLat() );
+    });
+  });
+
   //implementation
-  console.log('Ready to go...');
+  console.log('main.js connected');
 });
