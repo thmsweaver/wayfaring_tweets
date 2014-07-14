@@ -17,10 +17,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def edit
   end
 
-  def edit
+# TODO: why did I need the below show action for the edit user to function?
+  def show
   end
 
   def update

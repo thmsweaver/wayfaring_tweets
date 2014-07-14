@@ -1,3 +1,4 @@
+
 define(function(require) {
 
   //imports:
@@ -7,9 +8,7 @@ define(function(require) {
   var tweets = require('./models/tweets');
 
   tweets.fetch().then(function() {
-    tweets.each(function(tweet) {
-      console.log( tweet.getLat() );
-    });
+    tweets.render
   });
 
   //implementation

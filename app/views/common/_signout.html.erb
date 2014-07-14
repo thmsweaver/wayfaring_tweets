@@ -2,15 +2,17 @@
 <% if signed_in? %>
 
   <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
-  <li>
+  <p>
     signed in as <%= current_user.name %>
     <%= f.submit "sign out", id: 'signout' %>
-  </li>
+  </p>
+
+    <% if current_user %>
+    <div class="nav">
+      <p><%= link_to "edit details", edit_user_path(current_user) %></p>
+    </div>
+    <% end %>
+
   <% end %>
-
-  <% else %>
-
-    <%= link_to "Sign In", signin_path %>
-    <%= link_to "Sign up", signup_path %>
 
 <% end %>

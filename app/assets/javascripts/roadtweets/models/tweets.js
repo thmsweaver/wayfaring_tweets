@@ -7,9 +7,21 @@ define(function(require) {
     defaults: {
       user: {screen_name: '', created_at: ''},
       text: '',
-      media: [],
+      media: [], //TODO
       geo: {type: '', coordinates: []}
     },
+
+    getScreenName: function() {
+      var twitterUser = this.get('user');
+      return twitterUser.screen_name;
+    },
+
+    getCreatedAt: function() {
+      var twitterUser = this.get('user');
+      return twitterUser.created_at;
+    },
+
+    //do i need a function for getText?
 
     getLat: function() {
       var coords = this.get('geo');

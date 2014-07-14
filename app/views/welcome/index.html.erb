@@ -1,6 +1,13 @@
+<% if !signed_in? %>
+<div class="navigation">
+  <button id="button1"><%= link_to "Sign In", signin_path %></button>
+  <button id="button2"><%= link_to "Sign up", signup_path %></button>
+</div>
+<% end %>
 
 <div id="map"></div>
 <%= requirejs_include_tag %>
+
 <script>
   require.config({urlArgs: 'bust='+Date.now()});
   require(['roadtweets/main']);
@@ -11,3 +18,5 @@
   <input type="search" id="search-input">
 </div>
 <% end %>
+
+

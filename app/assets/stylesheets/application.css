@@ -14,8 +14,27 @@
  *= require_self
  */
 
+#button1 {
+  float: left;
+}
+
+#button2 {
+  float: right;
+}
+
 #map {
   height: 500px;
   width: 500px;
   margin: 0 auto;
+}
+
+.navigation {
+  border: 2px solid red;
+  height: 35px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.user_form_container {
+  border: 2px solid red;
 }
