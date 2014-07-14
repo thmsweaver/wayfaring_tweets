@@ -9,8 +9,12 @@ class TweetsController < ApplicationController
       config.access_token_secret = 'Kgp4Z4iojtjXiEQO6n1toHVHtKMS9D44SowfkAJDjL7le'
     end
 
-  #TODO: the below hashtag is currently hardcoded and need be dynamic
-    render json: @client.search('deepcreek6969', :result_type => "recent").attrs
+    hashtag = params[:hashtag] || "#deepcreek6969"
+    if params[:hashtag]
+      render json: @client.search(hashtag, :result_type => "recent").attrs
+    else
+      render json: {}
+    end
   end
 
 end

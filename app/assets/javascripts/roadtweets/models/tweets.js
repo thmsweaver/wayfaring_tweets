@@ -38,10 +38,22 @@ define(function(require) {
 
     url: '/tweets',
     model: Tweet,
+    searchTerm: '',
 
     parse: function(data) {
       return data.statuses;
     }
+
+    // search: function(hashtag) {
+    //   this.searchTerm = hashtag;
+    //   this.fetch();
+    // },
+
+    // fetch: function() {
+    //   return Backbone.Collection.prototype.fetch.call(this, {
+    //     data: {hashtag: this.searchTerm}
+    //   });
+    // }
   });
 
   console.log('tweets.js connected')
