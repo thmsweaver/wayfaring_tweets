@@ -13,13 +13,11 @@
   require(['roadtweets/main']);
 </script>
 
-<% if signed_in? %>
 <div class="search-container">
-  <%= form_tag({:controller=>"tweets", :action=>"index"}, method: :get) do %>
+  <%= form_tag({:controller=>"tweets", :action=>"index"}, id: 'search_form', method: :get) do %>
     <%= text_field_tag :search_term %>
     <%= submit_tag 'search for a hashtag', name: nil %>
   <% end %>
 </div>
-<% end %>
 
 

@@ -5,7 +5,7 @@ define(function(require) {
   var tweets = require('../models/tweets');
 
   var SearchView = Backbone.View.extend({
-    el: 'form',
+    el: '#search_form',
 
     events: {
       'submit' : 'search'
@@ -16,6 +16,7 @@ define(function(require) {
       tweets.fetch({
         data: {hashtag: this.$('#search_term').val()}
       });
+    this.$('#search_term').val('');
     }
   });
 

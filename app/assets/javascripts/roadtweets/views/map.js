@@ -3,12 +3,11 @@
 
 define(function(require) {
 
-  //imports:
   var Backbone = require('backbone');
   var L = require('leaflet');
   var tweets = require('../models/tweets');
+  var markers = [];
 
-  //map view that will dynamically respond to user input
   var MapViewController = Backbone.View.extend({
     initialize: function() {
       this.map = L.map('map').setView([41.39445299, -70.50578587], 3);
@@ -18,15 +17,19 @@ define(function(require) {
           maxZoom: 18
       }).addTo(this.map);
 
-      this.listenTo(this.collection, 'sync', this.render);
-      this.render();
+      this.listenTo(this.collection, 'sync', this.populate);
     },
 
-    render: function() {
+    populate: function() {
+      if(markers.length) {
+        for(var i=0; i < markers.length; i++) {
+          this.map.removeLayer(markers[i]);
+        }
+      }
       tweets.each(function(tweet) {
-        L.marker([tweet.getLat(), tweet.getLng()]).bindPopup('<p>' + tweet.get('text') +'</p>').addTo(this.map);
+        markers.push(L.marker([tweet.getLat(), tweet.getLng()]).bindPopup('<p>' + tweet.get('text') +'</p>').addTo(this.map));
       }, this);
-    }
+    },
 
   });
 
