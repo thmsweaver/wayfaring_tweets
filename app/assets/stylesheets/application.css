@@ -22,17 +22,20 @@
   float: right;
 }
 
+div .leaflet-popup-content-wrapper {
+  background-color: rgb(245,255,250);
+  width: 320px;
+}
+
 .infowindow {
-  border: 2px solid blue;
   border-radius: 15px;
-  width: 200px;
-  height: auto;
+  height: 140px;
 }
 
 #map {
   height: 500px;
-  width: 500px;
   margin: 0 auto;
+  width: 1000px;
 }
 
 .navigation {
@@ -42,10 +45,12 @@
 }
 
 .tweetpic {
-  align: left;
-  height: auto;
-  width: 100px;
   border-radius: 5px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 2px;
+  max-height: 140px;
+  width: 100px;
 }
 
 .user_form_container {

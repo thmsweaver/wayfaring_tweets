@@ -21,25 +21,25 @@ define(function(require) {
     },
 
     populate: function() {
-      markersArray.length = 0;
-      boundsToFit.length = 0;
-
         for(var i=0; i < markersArray.length; i++) {
           this.map.removeLayer(markersArray[i]);
         }
+        markersArray.length = 0;
+        boundsToFit.length = 0;
 
       tweets.each(function(tweet) {
         //TODO: bring in the marker image as asset
         markersArray
         .push(L.marker([tweet.getLat(), tweet.getLng()],
         {icon : L.icon({iconUrl: 'http://www.business-school.ed.ac.uk/blogs/ctc2014/wp-content/uploads/sites/8/leaflet-maps-marker-icons/map-marker.png', iconSize: [24,22]}) })
-        .bindPopup('<div class="infowindow"><p>' + tweet.get('text') +'</p><img src="'+ tweet.getMedia() +'" class="tweetpic"></div>')
+        .bindPopup('<div class="infowindow"><img src="'+ tweet.getMedia() +'" class="tweetpic"><h1>'+ tweet.getScreenName() +':</h1><p>' + tweet.get('text') +'</p></div>')
         .addTo(this.map));
 
+        //TODO: fix bug where map does not visit single plot
         boundsToFit.push([[tweet.getLat(), tweet.getLng()]]);
       }, this);
+      this.map.fitBounds(boundsToFit, {padding: [80, 80]});
 
-      this.map.fitBounds(boundsToFit, {padding: [100, 100]});
     }
 
   });
