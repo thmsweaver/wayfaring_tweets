@@ -8,7 +8,13 @@ define(function(require) {
       user: {screen_name: '', created_at: ''},
       text: '',
       media: [], //TODO
-      geo: {type: '', coordinates: []}
+      geo: {type: '', coordinates: []},
+      entities: {media: []}
+    },
+
+    getMedia: function() {
+      var twitterEntities = this.get('entities');
+      return twitterEntities.media[0].media_url;
     },
 
     getScreenName: function() {

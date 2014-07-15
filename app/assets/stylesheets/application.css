@@ -22,6 +22,13 @@
   float: right;
 }
 
+.infowindow {
+  border: 2px solid blue;
+  border-radius: 15px;
+  width: 200px;
+  height: auto;
+}
+
 #map {
   height: 500px;
   width: 500px;
@@ -32,6 +39,13 @@
   height: 35px;
   margin: 0 auto;
   width: 200px;
+}
+
+.tweetpic {
+  align: left;
+  height: auto;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .user_form_container {
