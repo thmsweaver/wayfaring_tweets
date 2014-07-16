@@ -39,6 +39,12 @@ div .leaflet-popup-content-wrapper {
   width: 320px;
 }
 
+.first {
+  color: #fa4542;
+  float: left;
+  padding: 3px;
+}
+
 .infowindow {
   border-radius: 15px;
   height: 140px;
@@ -50,7 +56,7 @@ input[value="search for a hashtag"] {
 
 #map {
   height: 500px;
-  margin: 0 auto;
+  margin-left: 200px;
   margin-top: 10px;
   width: 1000px;
 }
@@ -86,6 +92,12 @@ input[value="search for a hashtag"] {
   height: 30px;
 }
 
+.title_container {
+  float: left;
+  line-height: 20px;
+  padding-left: 70px;
+}
+
 .tweetpic {
   border-radius: 5px;
   float: left;
@@ -93,8 +105,4 @@ input[value="search for a hashtag"] {
   margin-top: 2px;
   max-height: 140px;
   width: 100px;
-}
-
-.user_form_container {
-  border: 2px solid red;
 }

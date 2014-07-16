@@ -8,9 +8,7 @@ define(function(require) {
   var Search = require('./views/search');
   var searchView = new Search({collection: tweets});
 
-  tweets.fetch().then(function() {
-
-  });
+  tweets.fetch()
 
   console.log('main.js connected');
 });

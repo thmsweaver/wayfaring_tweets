@@ -11,7 +11,7 @@ define(function(require) {
 
   var MapViewController = Backbone.View.extend({
     initialize: function() {
-      this.map = L.map('map').setView([44.39445299, -70.50578587], 6);
+      this.map = L.map('map').setView([51.4800, 0], 12);
 
       L.tileLayer('http://{s}.tiles.mapbox.com/v3/'+ leafletApiKey +'/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>      contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA   </a>  , Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -43,7 +43,6 @@ define(function(require) {
       this.map.fitBounds(boundsToFit, {padding: [40, 40]});
 
     }
-
   });
 
   console.log('map.js connected');
