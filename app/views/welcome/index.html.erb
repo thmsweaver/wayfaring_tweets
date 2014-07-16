@@ -1,3 +1,4 @@
+
 <% if !signed_in? %>
 <div class="navigation">
   <button id="button1"><%= link_to "Sign In", signin_path %></button>
@@ -12,6 +13,7 @@
 <script>
   require.config({urlArgs: 'bust='+Date.now()});
   require(['roadtweets/main']);
+  var leafletApiKey = "<%= ENV['LEAFLET_API_KEY'] %>"
 </script>
 
 <div class="search-container">

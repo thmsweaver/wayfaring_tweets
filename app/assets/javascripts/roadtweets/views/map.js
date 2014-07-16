@@ -4,6 +4,7 @@ define(function(require) {
   var Backbone = require('backbone');
   var L = require('leaflet');
   var tweets = require('../models/tweets');
+
   var markersArray = [];
   var group = new L.featureGroup(markersArray);
   var boundsToFit = [];
@@ -12,7 +13,7 @@ define(function(require) {
     initialize: function() {
       this.map = L.map('map').setView([44.39445299, -70.50578587], 6);
 
-      L.tileLayer('http://{s}.tiles.mapbox.com/v3/thmsweaver.inpogpo4/{z}/{x}/{y}.png', {
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/'+ leafletApiKey +'/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>      contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA   </a>  , Imagery © <a href="http://mapbox.com">Mapbox</a>',
           maxZoom: 18
       }).addTo(this.map);
@@ -24,6 +25,7 @@ define(function(require) {
         for(var i=0; i < markersArray.length; i++) {
           this.map.removeLayer(markersArray[i]);
         }
+        //TODO: add below memory-leak solution to stackoverflow
         markersArray.length = 0;
         boundsToFit.length = 0;
 
