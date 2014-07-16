@@ -16,7 +16,6 @@ define(function(require) {
       tweets.fetch({
         data: {hashtag: this.$('#search_term').val()}
       });
-    //this.$('.search_mirror').html('poop').val());
     this.$('#search_term').val('');
     }
   });
