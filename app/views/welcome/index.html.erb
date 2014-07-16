@@ -1,12 +1,11 @@
 
 <% if !signed_in? %>
 <div class="navigation">
-  <button id="button1"><%= link_to "Sign In", signin_path %></button>
-  <button id="button2"><%= link_to "Sign up", signup_path %></button>
+  <%= button_to "sign in", signin_path, :class => "button sign_in", :method => :get %>
+  <%= button_to "sign up", signup_path, :class => "button sign_up", :method => :get %>
 </div>
 <% end %>
 
-<div class="search_mirror"></div>
 <div id="map"></div>
 <%= requirejs_include_tag %>
 
@@ -19,7 +18,7 @@
 <div class="search-container">
   <%= form_tag({:controller=>"tweets", :action=>"index"}, id: 'search_form', method: :get) do %>
     <%= text_field_tag :search_term %>
-    <%= submit_tag 'search for a hashtag', name: nil %>
+    <%= submit_tag 'search for a hashtag', class: 'button search_submit', name: nil %>
   <% end %>
 </div>
 

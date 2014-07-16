@@ -14,12 +14,24 @@
  *= require_self
  */
 
-#button1 {
-  float: left;
+.button {
+  background-color: #fa4542;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 0 #be0201;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px;
 }
 
-#button2 {
+.button a {
+  text-decoration: none;
+}
+
+.button.search_submit {
   float: right;
+  margin-top: 13px;
 }
 
 div .leaflet-popup-content-wrapper {
@@ -32,16 +44,46 @@ div .leaflet-popup-content-wrapper {
   height: 140px;
 }
 
+input[value="search for a hashtag"] {
+  color: white;
+}
+
 #map {
   height: 500px;
   margin: 0 auto;
+  margin-top: 10px;
   width: 1000px;
 }
 
 .navigation {
   height: 35px;
-  margin: 0 auto;
-  width: 200px;
+  margin-bottom: 0;
+  margin-left: 1000px;
+  margin-top: 30px;
+  width: 165px;
+}
+
+.search-container {
+  width: 300px;
+  margin-left: 260px;
+}
+
+#search_term {
+  border: 1px solid grey;
+  border-radius: 3px;
+  float: left;
+  margin-top: 17px;
+  width: 125px;
+}
+
+.sign_in {
+  float: right;
+  height: 30px;
+}
+
+.sign_up {
+  align: left;
+  height: 30px;
 }
 
 .tweetpic {

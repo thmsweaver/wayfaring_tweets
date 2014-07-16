@@ -40,7 +40,7 @@ define(function(require) {
         //TODO: fix bug where map does not visit single plot
         boundsToFit.push([[tweet.getLat(), tweet.getLng()]]);
       }, this);
-      this.map.fitBounds(boundsToFit, {padding: [80, 80]});
+      this.map.fitBounds(boundsToFit, {padding: [40, 40]});
 
     }
 
