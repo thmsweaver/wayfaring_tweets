@@ -1,8 +1,9 @@
 
 <% if !signed_in? %>
 <div class="navigation">
-  <%= button_to "sign in", signin_path, :class => "button sign_in", :method => :get %>
-  <%= button_to "sign up", signup_path, :class => "button sign_up", :method => :get %>
+  <!--TODO: fix text centering for below two buttons-->
+  <%= button_to "sign in", signin_path, class: "button sign_in", method: :get %>
+  <%= button_to "sign up", signup_path, class: "button sign_up", method: :get %>
 </div>
 <% end %>
 
