@@ -1,0 +1,7 @@
+modules:
+  - name: 'roadtweets/main'
+
+shim:
+  jquery_ujs:
+    deps: ["jquery"]
+    exports: "$"
