@@ -1,3 +1,7 @@
+//iframe embed functionality?
+//hexcolor chronological progression?
+//gallery focus which cycles through pictures, add comments?
+//ability to tweet ftom mobile app?
 
 define(function(require) {
 
