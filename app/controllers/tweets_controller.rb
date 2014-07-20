@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
 
     hashtag = params[:hashtag] || "#deepcreek6969"
     if params[:hashtag]
-      render json: @client.search(hashtag, :result_type => "recent").attrs
+      render json: @client.search(hashtag, :result_type => "mixed").attrs
     else
       render json: {}
     end
