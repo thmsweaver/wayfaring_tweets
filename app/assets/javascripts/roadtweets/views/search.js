@@ -14,10 +14,12 @@ define(function(require) {
     search: function(evt) {
       evt.preventDefault();
       tweets.fetch({
-        data: {hashtag: this.$('#search_term').val()}
+        data: {hashtag: this.$('#search_hashtag').val(),
+                  user: this.$('#search_username').val()}
       });
 
-    this.$('#search_term').val('');
+    this.$('#search_hashtag').val('');
+    this.$('#search_username').val('');
     }
   });
 

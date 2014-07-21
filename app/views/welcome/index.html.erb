@@ -25,8 +25,9 @@
 
 <div class="search-container">
 <%= form_tag({:controller=>"tweets", :action=>"index"}, id: 'search_form', method: :get) do %>
-  <%= text_field_tag :search_term %>
-  <%= submit_tag 'search for a hashtag', class: 'button search_submit', name: nil %>
+  <%= text_field_tag :search_username %>
+  <%= text_field_tag :search_hashtag %>
+  <%= submit_tag 'search for a trip', class: 'button search_submit', name: nil %>
 <% end %>
 </div>
 

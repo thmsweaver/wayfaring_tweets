@@ -27,8 +27,6 @@ define(function(require) {
       return twitterUser.created_at;
     },
 
-    //do i need a function for getText?
-
     getLat: function() {
       var coords = this.get('geo');
       return coords.coordinates[0];
@@ -50,16 +48,6 @@ define(function(require) {
       return data.statuses;
     }
 
-    // search: function(hashtag) {
-    //   this.searchTerm = hashtag;
-    //   this.fetch();
-    // },
-
-    // fetch: function() {
-    //   return Backbone.Collection.prototype.fetch.call(this, {
-    //     data: {hashtag: this.searchTerm}
-    //   });
-    // }
   });
 
   console.log('tweets.js connected')
