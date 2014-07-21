@@ -19,16 +19,16 @@ class TweetsController < ApplicationController
       count = 0
 
       while count < max_count
-        search_tweets = @client.user_timeline(user, results: 'mixed').take(1000)
-        search_tweets.each do |tweet|
+        search_tweets = @client.user_timeline(user, results: 'mixed').take(1066)
 
+        search_tweets.each do |tweet|
           if tweet.attrs[:geo] && search_results.include?(tweet) == false && hashtag == tweet.attrs[:entities][:hashtags][0][:text]
             search_results << tweet.attrs
           end
+        end #End do
 
-        end # End do
         count += 1
-      end # End while loop
+      end #End while loop
       render json: search_results
     else
       render json: {}
