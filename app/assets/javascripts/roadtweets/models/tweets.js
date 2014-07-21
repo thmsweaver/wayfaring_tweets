@@ -45,7 +45,7 @@ define(function(require) {
     searchTerm: '',
 
     parse: function(data) {
-      return data.statuses;
+      return data;
     }
 
   });

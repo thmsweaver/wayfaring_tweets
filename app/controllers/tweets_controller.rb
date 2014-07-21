@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
         config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
       end
 
-      search_results = {:statuses => []}
+      search_results = []
       max_count = 3
       count = 0
 
@@ -22,9 +22,8 @@ class TweetsController < ApplicationController
         search_tweets = @client.user_timeline(user, results: 'mixed').take(1000)
         search_tweets.each do |tweet|
 
-          if tweet.attrs[:geo] && search_results[:statuses].include?(tweet) == false && hashtag == tweet.attrs[:entities][:hashtags][0][:text]
-            search_results[:statuses] << tweet.attrs
-            binding.pry
+          if tweet.attrs[:geo] && search_results.include?(tweet) == false && hashtag == tweet.attrs[:entities][:hashtags][0][:text]
+            search_results << tweet.attrs
           end
 
         end # End do
