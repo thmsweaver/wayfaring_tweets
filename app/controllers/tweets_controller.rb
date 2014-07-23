@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
       filtered_search = search_tweets.select do |tweet|
         attrs = tweet.attrs
         attrs.extend(DotNotation)
-          attrs[:user][:geo_enabled] && hashtag == attrs.dot('entities.hashtags.0.text')
+          attrs.dot('geo.coordinates') && hashtag == attrs.dot('entities.hashtags.0.text')
       end #End do
       render json: filtered_search
     else
