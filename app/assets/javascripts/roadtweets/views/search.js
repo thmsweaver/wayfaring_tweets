@@ -15,7 +15,8 @@ define(function(require) {
       evt.preventDefault();
       tweets.fetch({
         data: {hashtag: this.$('#search_hashtag').val(),
-                  user: this.$('#search_username').val()}
+                  user: this.$('#search_username').val()
+              }
       });
 
     this.$('#search_hashtag').val('');

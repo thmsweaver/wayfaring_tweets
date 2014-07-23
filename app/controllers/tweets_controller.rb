@@ -1,4 +1,6 @@
 
+require 'dot_notation'
+
 class TweetsController < ApplicationController
 
   def index
@@ -14,22 +16,13 @@ class TweetsController < ApplicationController
         config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
       end
 
-      search_results = []
-      max_count = 3
-      count = 0
-
-      while count < max_count
-        search_tweets = @client.user_timeline(user, results: 'mixed').take(1066)
-
-        search_tweets.each do |tweet|
-          if tweet.attrs[:geo] && search_results.include?(tweet) == false && hashtag == tweet.attrs[:entities][:hashtags][0][:text]
-            search_results << tweet.attrs
-          end
-        end #End do
-
-        count += 1
-      end #End while loop
-      render json: search_results
+      search_tweets = @client.user_timeline(user, results: 'mixed').take(3199)
+      filtered_search = search_tweets.select do |tweet|
+        attrs = tweet.attrs
+        attrs.extend(DotNotation)
+          attrs[:user][:geo_enabled] && hashtag == attrs.dot('entities.hashtags.0.text')
+      end #End do
+      render json: filtered_search
     else
       render json: {}
     end #End if statment

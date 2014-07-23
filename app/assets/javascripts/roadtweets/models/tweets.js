@@ -7,7 +7,7 @@ define(function(require) {
     defaults: {
       user: {screen_name: '', created_at: ''},
       text: '',
-      media: [], //TODO
+      media: [],
       geo: {type: '', coordinates: []},
       entities: {media: []}
     },
