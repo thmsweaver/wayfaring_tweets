@@ -5,7 +5,7 @@ define(function(require) {
 
   var Tweet = Backbone.Model.extend({
     defaults: {
-      user: {screen_name: '', created_at: ''},
+      user: {screen_name: '', created_at: '', profile_image_url: ''},
       text: '',
       media: [],
       geo: {type: '', coordinates: []},
@@ -14,7 +14,12 @@ define(function(require) {
 
     getMedia: function() {
       var twitterEntities = this.get('entities');
-      return twitterEntities.media[0].media_url;
+      if('media' in this.get('entities')) {
+        return twitterEntities.media[0].media_url;
+      }else{
+        var twitterUser = this.get('user')
+        return twitterUser.profile_image_url.replace('_normal', '');
+      }
     },
 
     getScreenName: function() {
