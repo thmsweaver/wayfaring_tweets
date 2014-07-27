@@ -5,19 +5,11 @@
 
 ##Technologies Used
 * [Twitter Rest API v1.1](https://dev.twitter.com/docs/api/1.1 "Twitter Rest API v1.1")
-
 * [RequireJS](http://requirejs.org/ "RequireJS")
-
 * [Backbone.js](http://backbonejs.org/ "Backbone.js")
-
 * [Leaflet](http://leafletjs.com/ "Leaflet")
-* 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##User Stories
+* A user can submit a twitter handle and hashtag to instantly view an array of geo-tagged tweets
+* A user can click on an individal Leaflet marker to view associated tweet details
+* A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
