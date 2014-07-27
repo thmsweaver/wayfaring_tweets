@@ -37,7 +37,7 @@
 
 ![moblie phone location services](./README/twitter_location_services.png)
 
-###Step number whatever; go somewhere!
+###Go somewhere!
 * so it's worth mentioning that this will only work if tweeting from a device not connected to wifi. There is a silver lining to that; however, as you are now compelled to get out there and explore.
 * when tweeting about your adventure, be sure to choose a unique hashtag that will begin each tweet's text
 * written accounts are great, but include PICTURES!
