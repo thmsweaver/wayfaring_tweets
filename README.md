@@ -28,5 +28,14 @@
 
 ![twitter account settings](./README/twitter_security_privacy.jpg)
 
+* you have now finished configuring your twitter account and are almost ready to start tweeting from a mobile device!
+
+###Grab your phone and:
+* download the free twitter mobile app if you haven't already
+* go to your phone's settings ensure that 'location services' is switched on
+* within the 'location services' menu, be sure to specifically enable Twitter
+
+![moblie phone location services](./README/twitter_location_services.png)
+
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
