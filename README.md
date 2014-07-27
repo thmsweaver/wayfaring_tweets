@@ -15,12 +15,18 @@
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
 
 ##How to use Wayfaring Tweets:
-###Log in to your twitter account, then:
+###On a desktop, log in to your twitter account, then:
 * click the cog in the upper, right corner
 * a drop-down menu will appear, click 'settings'
-* after clicking 'settings', visit the left sidebar to click 'security and privacy'
+* after clicking 'settings' visit the left sidebar to select 'security and privacy'
 
 ![twitter account settings](./README/twitter_account_settings.jpg)
+
+* upon selecting 'security and privacy' the center of your screen will reload with new options
+* scroll down to 'privacy'
+* then select the checkbox 'Add a location to my tweets'
+
+![twitter account settings](./README/twitter_security_privacy.jpg)
 
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
