@@ -13,3 +13,6 @@
 * A user can submit a twitter handle and hashtag to instantly view an array of geo-tagged tweets
 * A user can click on an individal Leaflet marker to view associated tweet details
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
+
+##Sample Wayfaring Roadtrip
+![Example 1](./README/wayfaring_tweets.jpg)
