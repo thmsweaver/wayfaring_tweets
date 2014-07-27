@@ -15,11 +15,12 @@
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
 
 ##How to use Wayfaring Tweets:
-###Log in to your twitter account
+###Log in to your twitter account, then:
 * click the cog in the upper, right corner
 * a drop-down menu will appear, click 'settings'
 * after clicking 'settings', visit the left sidebar to click 'security and privacy'
-![Example 1](./README/twitter_account_settings.jpg)
+
+![twitter account settings](./README/twitter_account_settings.jpg)
 
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
