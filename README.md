@@ -19,7 +19,7 @@
 * click the cog in the upper, right corner
 * a drop-down menu will appear, click 'settings'
 * after clicking 'settings', visit the left sidebar to click 'security and privacy'
-![Example 1](./README/twitter_location_services.png)
+![Example 1](./README/twitter_account_settings.jpg)
 
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
