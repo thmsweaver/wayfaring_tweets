@@ -15,7 +15,7 @@
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
 
 ##How to use Wayfaring Tweets:
-###On a desktop, log in to your twitter account, then:
+###On a desktop (doing this on a phone will be very similar), log in to your twitter account, then:
 * click the cog in the upper, right corner
 * a drop-down menu will appear, click 'settings'
 * after clicking 'settings' visit the left sidebar to select 'security and privacy'
