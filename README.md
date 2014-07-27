@@ -37,5 +37,14 @@
 
 ![moblie phone location services](./README/twitter_location_services.png)
 
+###Step number whatever; go somewhere!
+* so it's worth mentioning that this will only work if tweeting from a device not connected to wifi. There is a silver lining to that; however, as you are now compelled to get out there and explore.
+* when tweeting about your adventure, be sure to choose a unique hashtag that will begin each tweet's text
+* written accounts are great, but include PICTURES!
+* and before you send each tweet, make sure to drop that pin:
+
+![twitter moblie pin drop](./README/geo_tweet.png)
+
+
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
