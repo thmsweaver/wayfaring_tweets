@@ -13,3 +13,14 @@
 * A user can submit a twitter handle and hashtag to instantly view an array of geo-tagged tweets
 * A user can click on an individal Leaflet marker to view associated tweet details
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
+
+##How to use Wayfaring Tweets:
+###Log in to your twitter account
+* click the cog in the upper, right corner
+* a drop-down menu will appear, click 'settings'
+* after clicking 'settings', visit the left sidebar to click 'security and privacy'
+![Example 1](./README/twitter_account_settings)
+
+
+##Sample Wayfaring Roadtrip
+![Example 2](./README/wayfaring_tweets.jpg)
