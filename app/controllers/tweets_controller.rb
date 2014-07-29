@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   def index
     if params[:hashtag] && params[:user]
 
-      hashtag = params[:hashtag]
+      hashtag = params[:hashtag].gsub('#', '')
       user = params[:user]
 
       @client = Twitter::REST::Client.new do |config|

@@ -31,7 +31,6 @@
 
 .button.search_submit {
   float: right;
-  margin-top: 13px;
 }
 
 div .leaflet-popup-content-wrapper {
@@ -70,8 +69,9 @@ input[value="search for a hashtag"] {
 }
 
 .search-container {
-  width: 300px;
   margin-left: 260px;
+  margin-top: 10px;
+  width: 400px;
 }
 
 #search_term {
