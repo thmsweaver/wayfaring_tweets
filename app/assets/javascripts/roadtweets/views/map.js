@@ -45,6 +45,7 @@ define(function(require) {
 
         boundsToFit.push([tweet.getLat(), tweet.getLng()]);
 
+        //TODO:polyline persists if empty search form is submitted
         firstpolyline = new L.Polyline(boundsToFit, {
           color: 'red',
           weight: 3,

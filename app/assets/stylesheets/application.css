@@ -16,6 +16,7 @@
 
 body {
   margin: 0;
+  position: relative;
 }
 
 .button {
@@ -48,6 +49,15 @@ div .leaflet-popup-content-wrapper {
   padding: 3px;
 }
 
+.feedback {
+  display: inline-block;
+  left: 2%;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  position: absolute;
+}
+
 .infowindow {
   border-radius: 15px;
   height: 140px;
@@ -65,10 +75,12 @@ input[value="search for a hashtag"] {
 }
 
 .navigation {
+  display: inline-block;
   height: 35px;
   margin-bottom: 0;
-  margin-left: 1000px;
+  left: 70%;
   margin-top: 30px;
+  position: relative;
   width: 165px;
 }
 
