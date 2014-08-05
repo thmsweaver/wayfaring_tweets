@@ -15,7 +15,7 @@
 * A user can load an entirely new array of tweets after submitting a new twitter handle and hashtag
 
 ##How to use Wayfaring Tweets:
-###On a desktop, log in to your twitter account, then:
+###On a desktop (doing this on a phone will be very similar), log in to your twitter account, then:
 * click the cog in the upper, right corner
 * a drop-down menu will appear, click 'settings'
 * after clicking 'settings' visit the left sidebar to select 'security and privacy'
@@ -36,6 +36,15 @@
 * within the 'location services' menu, be sure to specifically enable Twitter
 
 ![moblie phone location services](./README/twitter_location_services.png)
+
+###Go somewhere!
+* so it's worth mentioning that this will only work if tweeting from a device not connected to wifi. There is a silver lining to that; however, as you are now compelled to get out there and explore.
+* when tweeting about your adventure, be sure to choose a unique hashtag that will begin each tweet's text
+* written accounts are great, but include PICTURES!
+* and before you send each tweet, make sure to drop that pin:
+
+![twitter moblie pin drop](./README/geo_tweet.png)
+
 
 ##Sample Wayfaring Roadtrip
 ![Example 2](./README/wayfaring_tweets.jpg)
