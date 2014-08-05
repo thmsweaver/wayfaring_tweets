@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  margin: 0;
+}
+
 .button {
   background-color: #fa4542;
   border: none;
@@ -55,9 +59,9 @@ input[value="search for a hashtag"] {
 
 #map {
   height: 500px;
-  margin-left: 200px;
   margin-top: 10px;
-  width: 1000px;
+  padding: 0;
+  width: 100%;
 }
 
 .navigation {

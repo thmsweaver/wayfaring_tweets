@@ -8,26 +8,32 @@ define(function(require) {
   var markersArray = [];
   var group = new L.featureGroup(markersArray);
   var boundsToFit = [];
+  var firstpolyline;
 
   var MapViewController = Backbone.View.extend({
     initialize: function() {
-      this.map = L.map('map').setView([51.4800, 0], 12);
+      this.map = L.map('map').setView([51.4800, 0], 14);
 
       L.tileLayer('http://{s}.tiles.mapbox.com/v3/'+ leafletApiKey +'/{z}/{x}/{y}.png', {
-          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>      contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA   </a>  , Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
           maxZoom: 18
       }).addTo(this.map);
+
+      this.map.touchZoom.disable();
+      this.map.scrollWheelZoom.disable();
 
       this.listenTo(this.collection, 'sync', this.populate);
     },
 
     populate: function() {
-        for(var i=0; i < markersArray.length; i++) {
-          this.map.removeLayer(markersArray[i]);
-        }
-        //TODO: add below memory-leak solution to stackoverflow
-        markersArray.length = 0;
-        boundsToFit.length = 0;
+      for(var i=0; i < markersArray.length; i++) {
+        this.map.removeLayer(markersArray[i]);
+        this.map.removeLayer(firstpolyline);
+      }
+
+    //TODO: add below memory-leak solution to stackoverflow
+    markersArray.length = 0;
+    boundsToFit.length = 0;
 
       tweets.each(function(tweet) {
         //TODO: bring in the marker image as asset
@@ -37,11 +43,19 @@ define(function(require) {
         .bindPopup('<div class="infowindow"><img src="'+ tweet.getMedia() +'" class="tweetpic"><h1>'+ tweet.getScreenName() +':</h1><p>' + tweet.get('text') +'</p></div>')
         .addTo(this.map));
 
-        //TODO: fix bug where map does not visit single plot
-        boundsToFit.push([[tweet.getLat(), tweet.getLng()]]);
-      }, this);
-      this.map.fitBounds(boundsToFit, {padding: [40, 40]});
+        boundsToFit.push([tweet.getLat(), tweet.getLng()]);
 
+        firstpolyline = new L.Polyline(boundsToFit, {
+          color: 'red',
+          weight: 3,
+          opacity: 0.5,
+          smoothFactor: 1,
+        });
+
+      }, this);
+
+      firstpolyline.addTo(this.map);
+      this.map.fitBounds(boundsToFit, {padding: [40, 40]});
     }
   });
 
