@@ -69,11 +69,16 @@ input[value="search for a hashtag"] {
   color: white;
 }
 
+.leaflet-control {
+  border-top-left-radius: 7px;
+}
+
 #map {
-  height: 500px;
+  height: 550px;
   margin-top: 10px;
   padding: 0;
   width: 100%;
+  z-index: 0;
 }
 
 .navigation {
@@ -81,16 +86,18 @@ input[value="search for a hashtag"] {
   height: 35px;
   margin-bottom: 0;
   left: 70%;
-  margin-top: 30px;
+  margin-top: 45px;
   position: relative;
   width: 165px;
+  z-index: 1;
 }
 
 .search-container {
   left: 12%;
   margin-top: 10px;
   position: relative;
-  width: 630px;
+  width: 632px;
+  z-index: 1;
 }
 
 #search_term {
@@ -102,11 +109,12 @@ input[value="search for a hashtag"] {
 }
 
 .search_field {
-  border: 2px solid rgba(115, 115, 115, 0.6);
+  border: 2px solid rgba(115, 115, 115, 0.4);
   border-radius: 3px;
   color: #737373;
   font-size: large;
   height: 30px;
+  padding-left: 5px;
   width: 235px;
 }
 
@@ -133,4 +141,10 @@ input[value="search for a hashtag"] {
   margin-top: 2px;
   max-height: 140px;
   width: 100px;
+}
+
+@media (max-width : 870px) {
+
+
+
 }

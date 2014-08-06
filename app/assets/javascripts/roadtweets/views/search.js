@@ -22,9 +22,9 @@ define(function(require) {
       });
 
     if($('#search_username').val().length && $('#search_hashtag').val().length) {
-      $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('slow');
+      $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('fast');
     }else{
-      $('.feedback').fadeOut('slow');
+      $('.feedback').fadeOut('fast');
     }
 
     this.$('#search_hashtag').val('');
