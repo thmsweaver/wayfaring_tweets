@@ -20,12 +20,12 @@ define(function(require) {
                   user: this.$('#search_username').val()
               }
       });
-    //TODO: extrapolate this to another method that listens to the model updating.
-    if($('#search_username').val().length && $('#search_hashtag').val().length) {
-      $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('fast');
-    }else{
-      $('.feedback').html('please enter a Twitter handle and hashtag').hide().fadeIn('fast');
-    }
+      //TODO: extrapolate this to another method that listens to the model updating.
+      if($('#search_username').val().length && $('#search_hashtag').val().length) {
+        $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('fast');
+      }else{
+        $('.feedback').html('please enter a Twitter handle and hashtag').hide().fadeIn('fast');
+      }
 
     this.$('#search_hashtag').val('');
     this.$('#search_username').val('');

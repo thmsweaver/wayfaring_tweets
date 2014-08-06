@@ -44,12 +44,6 @@ div .leaflet-popup-content-wrapper {
   width: 320px;
 }
 
-.first {
-  color: #fa4542;
-  float: left;
-  padding: 3px;
-}
-
 .feedback {
   display: inline-block;
   color: #737373;
@@ -58,6 +52,12 @@ div .leaflet-popup-content-wrapper {
   margin-top: 43px;
   padding: 0;
   position: absolute;
+}
+
+.first {
+  color: #fa4542;
+  float: left;
+  padding: 3px;
 }
 
 .infowindow {
@@ -100,14 +100,6 @@ input[value="search for a hashtag"] {
   z-index: 1;
 }
 
-#search_term {
-  border: 1px solid grey;
-  border-radius: 3px;
-  float: left;
-  margin-top: 17px;
-  width: 125px;
-}
-
 .search_field {
   border: 2px solid rgba(115, 115, 115, 0.4);
   border-radius: 3px;
@@ -116,6 +108,14 @@ input[value="search for a hashtag"] {
   height: 30px;
   padding-left: 5px;
   width: 235px;
+}
+
+#search_term {
+  border: 1px solid grey;
+  border-radius: 3px;
+  float: left;
+  margin-top: 17px;
+  width: 125px;
 }
 
 .sign_in {
