@@ -15,6 +15,7 @@
  */
 
 body {
+  font-family: Helvetica;
   margin: 0;
   position: relative;
 }
@@ -51,6 +52,7 @@ div .leaflet-popup-content-wrapper {
 
 .feedback {
   display: inline-block;
+  color: #737373;
   left: 2%;
   margin: 0;
   margin-top: 30px;
@@ -85,9 +87,10 @@ input[value="search for a hashtag"] {
 }
 
 .search-container {
-  margin-left: 260px;
+  left: 12%;
   margin-top: 10px;
-  width: 400px;
+  position: relative;
+  width: 630px;
 }
 
 #search_term {
@@ -96,6 +99,15 @@ input[value="search for a hashtag"] {
   float: left;
   margin-top: 17px;
   width: 125px;
+}
+
+.search_field {
+  border: 2px solid rgba(115, 115, 115, 0.6);
+  border-radius: 3px;
+  color: #737373;
+  font-size: large;
+  height: 30px;
+  width: 235px;
 }
 
 .sign_in {

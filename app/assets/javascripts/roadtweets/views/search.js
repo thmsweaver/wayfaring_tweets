@@ -21,7 +21,12 @@ define(function(require) {
               }
       });
 
-    $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('slow');
+    if($('#search_username').val().length && $('#search_hashtag').val().length) {
+      $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('slow');
+    }else{
+      $('.feedback').fadeOut('slow');
+    }
+
     this.$('#search_hashtag').val('');
     this.$('#search_username').val('');
     }
