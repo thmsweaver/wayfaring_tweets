@@ -55,12 +55,7 @@ define(function(require) {
 
       }, this);
 
-      if(boundsToFit.length < 1) {
-        return
-      }else{
-        firstpolyline.addTo(this.map);
-      }
-
+      if(boundsToFit.length > 0) { firstpolyline.addTo(this.map); }
       this.map.fitBounds(boundsToFit, {padding: [40, 40]});
     }
   });
