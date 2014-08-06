@@ -24,7 +24,7 @@ define(function(require) {
     if($('#search_username').val().length && $('#search_hashtag').val().length) {
       $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('fast');
     }else{
-      $('.feedback').fadeOut('fast');
+      $('.feedback').html('please enter a Twitter handle and hashtag').hide().fadeIn('fast');
     }
 
     this.$('#search_hashtag').val('');
