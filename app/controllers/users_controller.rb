@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def edit
   end
 
-# TODO: why did I need the below show action for the edit user to function?
   def show
   end
 

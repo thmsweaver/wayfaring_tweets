@@ -4,7 +4,7 @@ require 'dot_notation'
 class TweetsController < ApplicationController
 
   def index
-    if params[:hashtag] && params[:user]
+    if params[:hashtag].length > 0 && params[:user].length > 0
 
       hashtag = params[:hashtag].gsub('#', '')
       user = params[:user]
@@ -24,6 +24,7 @@ class TweetsController < ApplicationController
       end #End do
       render json: filtered_search
     else
+      #TODO: or put something here to raise errors in feedbackview/best to add something to Tweets model however
       render json: {}
     end #End if statment
   end #End index action

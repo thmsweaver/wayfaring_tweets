@@ -11,6 +11,7 @@ define(function(require) {
   var tweets = require('./models/tweets');
   var Search = require('./views/search');
   var searchView = new Search({collection: tweets});
+  var Feedback = require('./views/feedback');
 
   console.log('main.js connected');
 });

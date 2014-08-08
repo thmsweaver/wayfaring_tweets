@@ -47,7 +47,6 @@ define(function(require) {
 
     url: '/tweets',
     model: Tweet,
-    searchTerm: '',
 
     parse: function(data) {
       return data;
