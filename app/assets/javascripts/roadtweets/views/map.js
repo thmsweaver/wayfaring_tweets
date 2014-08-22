@@ -6,14 +6,13 @@ define(function(require) {
   var tweets = require('../models/tweets');
 
   var markersArray = [];
-  var group = new L.featureGroup(markersArray);
   var boundsToFit = [];
-  var firstpolyline;
+  var tweetsPolyline;
 
   var MapViewController = Backbone.View.extend({
 
     initialize: function() {
-      this.map = L.map('map').setView([51.4800, 0], 14);
+      this.map = L.map('map').setView([51.48, 0], 14);
 
       L.tileLayer('http://{s}.tiles.mapbox.com/v3/'+ leafletApiKey +'/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -24,13 +23,19 @@ define(function(require) {
       this.map.scrollWheelZoom.disable();
 
       this.listenTo(this.collection, 'sync', this.populate);
+      this.listenTo(this.collection, 'reset', this.clearMap);
+      this.listenTo(this.collection, 'errorOnFetch', this.clearMap);
     },
 
-    populate: function() {
-      for(var i=0; i < markersArray.length; i++) {
+    clearMap: function(){
+      for(var i = 0; i < markersArray.length; i++){
         this.map.removeLayer(markersArray[i]);
-        this.map.removeLayer(firstpolyline);
+        this.map.removeLayer(tweetsPolyline);
       }
+    },
+
+    populate: function(){
+      this.clearMap();
 
     //TODO: add below memory-leak solution to stackoverflow
     markersArray.length = 0;
@@ -46,8 +51,7 @@ define(function(require) {
 
       boundsToFit.push([tweet.getLat(), tweet.getLng()]);
 
-      //TODO:polyline persists if empty search form is submitted
-      firstpolyline = new L.Polyline(boundsToFit, {
+      tweetsPolyline = new L.polyline(boundsToFit, {
         color: 'red',
         weight: 3,
         opacity: 0.5,
@@ -56,8 +60,8 @@ define(function(require) {
 
     }, this);
 
-      firstpolyline.addTo(this.map);
-      this.map.fitBounds(boundsToFit, {padding: [40, 40]});
+    if(boundsToFit.length) { tweetsPolyline.addTo(this.map); }
+    this.map.fitBounds(boundsToFit, {padding: [40, 40]});
     }
   });
 

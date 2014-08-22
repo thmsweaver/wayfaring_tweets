@@ -1,3 +1,4 @@
+
 class User < ActiveRecord::Base
 
   # add handlers to run when creating and saving:

@@ -9,12 +9,24 @@ define(function(require) {
     el: '.feedback',
 
     initialize: function() {
-      this.listenTo(this.collection, 'sync', this.displaySearch)
+      this.listenTo(this.collection, 'sync', this.displaySearch);
+      this.listenTo(this.collection, 'reset', this.promptForSearch);
+      this.listenTo(this.collection, 'errorOnFetch', this.displayError);
     },
 
-    displaySearch: function() {
+    displayError: function(){
+      this.$el.html('Tweets could not be located');
+    },
+
+    promptForSearch: function(){
+      this.$el.html('Please enter a Twitter handle and hashtag');
+    },
+
+    displaySearch: function(){
       var first = this.collection.models[0];
-      this.$el.html('@' + first.attributes.user.screen_name +', #'+ first.attributes.entities.hashtags[0].text);
+      this.$el.html('@' + first.attributes.user.screen_name +
+      ', #' +
+      first.attributes.entities.hashtags[0].text).hide().fadeIn();
     }
 
   });
@@ -22,10 +34,3 @@ define(function(require) {
   console.log('feedback.js connected');
   return new Feedback({ collection: tweets });
 });
-
-  // //TODO: extrapolate this to another method that listens to the model updating.
-  //     if($('#search_username').val().length && $('#search_hashtag').val().length) {
-  //       $('.feedback').html($('#search_username').val() + ', ' + $('#search_hashtag').val()).hide().fadeIn('fast');
-  //     }else{
-  //       $('.feedback').html('please enter a Twitter handle and hashtag').hide().fadeIn('fast');
-  //     }

@@ -14,7 +14,7 @@ define(function(require) {
 
     getMedia: function() {
       var twitterEntities = this.get('entities');
-      if('media' in this.get('entities')) {
+      if('media' in twitterEntities && 'hashtags' in twitterEntities) {
         return twitterEntities.media[0].media_url;
       }else{
         var twitterUser = this.get('user')
@@ -47,6 +47,10 @@ define(function(require) {
 
     url: '/tweets',
     model: Tweet,
+
+    throwError: function(){
+      this.trigger('errorOnFetch');
+    },
 
     parse: function(data) {
       return data;

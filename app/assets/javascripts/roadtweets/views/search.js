@@ -13,17 +13,22 @@ define(function(require) {
 
     search: function(evt) {
       evt.preventDefault();
-      //if(this.$('#search_hashtag').val().length && this.$('#search_username').val().length)
+      if(!this.$('#search_hashtag').val().length || !this.$('#search_username').val().length){
+        tweets.reset();
+      }else{
         tweets.fetch({
           data: {hashtag: this.$('#search_hashtag').val(),
-                    user: this.$('#search_username').val()
-                }
+                 user: this.$('#search_username').val()
+                },
+          error: function(){
+            tweets.throwError();
+          }
         });
+      }
 
-      this.$('#search_hashtag').val('');
-      this.$('#search_username').val('');
+    this.$('#search_hashtag').val('');
+    this.$('#search_username').val('');
     }
-
   });
 
   console.log('search.js connected');
