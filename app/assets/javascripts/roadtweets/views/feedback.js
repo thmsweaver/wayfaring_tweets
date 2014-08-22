@@ -15,7 +15,7 @@ define(function(require) {
     },
 
     displayError: function(){
-      this.$el.html('Tweets could not be located');
+      this.$el.html('Sorry, your Tweets could not be located');
     },
 
     promptForSearch: function(){
@@ -28,7 +28,6 @@ define(function(require) {
       ', #' +
       first.attributes.entities.hashtags[0].text).hide().fadeIn();
     }
-
   });
 
   console.log('feedback.js connected');

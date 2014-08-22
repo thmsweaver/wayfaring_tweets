@@ -13,12 +13,16 @@ define(function(require) {
 
     search: function(evt) {
       evt.preventDefault();
-      if(!this.$('#search_hashtag').val().length || !this.$('#search_username').val().length){
+
+      var handle = this.$('#search_handle');
+      var hashtag = this.$('#search_hashtag');
+
+      if(!handle.val().length && !hashtag.val().length){
         tweets.reset();
       }else{
         tweets.fetch({
-          data: {hashtag: this.$('#search_hashtag').val(),
-                 user: this.$('#search_username').val()
+          data: {user: handle.val(),
+                 hashtag: hashtag.val()
                 },
           error: function(){
             tweets.throwError();
@@ -26,8 +30,8 @@ define(function(require) {
         });
       }
 
-    this.$('#search_hashtag').val('');
-    this.$('#search_username').val('');
+    handle.val('');
+    hashtag.val('');
     }
   });
 

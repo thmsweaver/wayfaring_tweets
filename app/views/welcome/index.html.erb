@@ -20,7 +20,7 @@
 
 <div class="search-container">
 <%= form_tag({:controller=>"tweets", :action=>"index"}, id: 'search_form', method: :get) do %>
-  <%= text_field_tag :search_username, nil, placeholder: 'username', class: 'search_field' %>
+  <%= text_field_tag :search_handle, nil, placeholder: 'Twitter handle', class: 'search_field' %>
   <%= text_field_tag :search_hashtag, nil, placeholder: 'hashtag', class: 'search_field' %>
   <%= submit_tag 'search for a trip', class: 'button search_submit', name: nil %>
 <% end %>
